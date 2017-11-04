@@ -1,7 +1,11 @@
 # logger
 Project for udacity log analysis
 
+Usage python3 query.py
 
+This program uses tabulate install using pip
+    
+    pip install tabulate
 
 1.Create views using following sql commands
 
