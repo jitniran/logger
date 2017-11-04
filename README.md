@@ -1,5 +1,8 @@
 # logger
 Project for udacity log analysis
+
+
+
 1.Create views using following sql commands
 
   create view populararticles as 
