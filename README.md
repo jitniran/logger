@@ -3,9 +3,11 @@ Project for udacity log analysis
 
 Usage python3 query.py
 
-This program uses tabulate install using pip
+This program uses tabulate,psycopg2,json install using pip
     
     pip install tabulate
+    pip install psycopg2
+    pip install json
 
 1.Create views using following sql commands
 
