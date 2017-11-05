@@ -11,16 +11,7 @@
     },
     {
         "question": "On which days did more than 1% of requests lead to errors?",
-        "query": "select failedrequests.date,100.0 *(failedrequests.errors/allrequests.req) as percent from failedrequests,allrequests where failedrequests.date=allrequests.date and 100.0*(failedrequests.errors/allrequests.req) > 1.0 order by percent;",
+        "query": "select to_char(failedrequests.date, 'FMmonth dd, YYYY'),100.0 *(failedrequests.errors/allrequests.req) as percent from failedrequests,allrequests where failedrequests.date=allrequests.date and 100.0*(failedrequests.errors/allrequests.req) > 1.0 order by percent;",
         "header": ["Date","Percent"]
-    }],
-    "views": [{
-        "query": "create view populararticles as select substring(path,10) as slug,count(*) as views from log where status like '2%' and log.path != '/' group by slug order by views desc;"
-    },
-    {
-        "query": "create view allrequests as select to_char(log.time,'FMMonth dd,YYYY') as date,cast(count(*) as float) as req from log group by date order by req desc;"
-    },
-    {
-        "query": "create view failedrequests as select to_char(log.time,'FMMonth dd,YYYY') as date,count(*) as errors from log where status not like '2%' group by date order by errors desc;"
     }]
 }
