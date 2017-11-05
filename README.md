@@ -56,9 +56,9 @@ Usage python3 query.py
 
 2. query.py uses tabulate,psycopg2,json install using pip
     
-    pip3 install tabulate
-    pip3 install psycopg2
-    pip3 install json
+        pip3 install tabulate
+        pip3 install psycopg2
+        pip3 install json
 
 3. Run query.py using python3
 
